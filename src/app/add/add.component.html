@@ -1,0 +1,15 @@
+<h3>Add</h3>
+
+<form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+
+  <div>
+    <label for="task"> Add a task: </label>
+    <input id="task" type="text" formControlName="task">
+  </div>
+
+  <button class="button" type="submit">Add</button>
+
+  <div *ngFor='let task of taskLists;'>
+    <app-task [task]="task"></app-task>
+  </div>
+</form>
